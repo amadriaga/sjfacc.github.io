@@ -1,4 +1,4 @@
-/* South Jersey Fil-American Chess Club — design system */
+/* South Jersey Filipino-American Chess Club — design system */
 :root {
   --ink: #0f1b2d;
   --ink-2: #1a2a42;
@@ -222,5 +222,10 @@ fieldset { border: 0; padding: 0; margin: 0; }
   .form-card { padding: 26px 20px; }
   .hero-meta { gap: 20px; }
   .footer-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 420px) {
+  .brand { gap: 10px; }
+  .brand-mark { width: 36px; height: 36px; }
+  .brand-sub { font-size: .62rem; letter-spacing: 0; white-space: nowrap; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }

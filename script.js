@@ -1,4 +1,4 @@
-// South Jersey Fil-American Chess Club — site behaviour
+// South Jersey Filipino-American Chess Club — site behaviour
 (function () {
   // Mobile menu
   var toggle = document.querySelector('.menu-toggle');

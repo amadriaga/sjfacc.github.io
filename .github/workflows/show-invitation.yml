@@ -2,6 +2,7 @@
 # Manual switch for the live website. GitHub Pages serves the `main` branch;
 # this moves `main` to the `prelaunch` branch. Run it from the Actions tab
 # ("Run workflow"); only people with write access to this repo can.
+# Branches: launch (full site, default branch), prelaunch (invitation), main (live).
 # See websites/sjfacc-inaugural-club-night/inaugural-club-night-program.md §17.4
 name: "Show the invitation page"
 

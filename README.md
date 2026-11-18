@@ -39,6 +39,8 @@ Workflows (Actions tab, "Run workflow"): **Go live — show the full site** (typ
 
 Review copy: https://sjfacc.o2bot.com (`../publish-sjfacc-preview.sh`).
 
+Local backup: GitLab `http://10.1.0.200:8082/cloudflare-platform/websites/sjfacc-website` (remote `gitlab`; local `main` tracks it, so a plain `git push` never reaches GitHub).
+
 ## Local Development
 
 ```bash

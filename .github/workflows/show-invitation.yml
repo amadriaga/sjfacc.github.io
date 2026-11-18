@@ -27,8 +27,10 @@ jobs:
     steps:
       - name: Check the confirmation word
         if: ${{ inputs.confirm != 'INVITATION' }}
+        env:
+          TYPED: ${{ inputs.confirm }}
         run: |
-          echo "::error::You typed '${{ inputs.confirm }}'. Type INVITATION exactly. Nothing was changed."
+          echo "::error::You typed '$TYPED'. Type INVITATION exactly. Nothing was changed."
           exit 1
 
       - uses: actions/checkout@v4

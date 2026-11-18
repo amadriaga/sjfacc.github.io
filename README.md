@@ -14,6 +14,7 @@ Plan: `../sjfacc.org-website-plan.md` · Domain setup: `../sjfacc.org-domain.md`
 | About Us | `about.html` |
 | Schedule | `schedule.html` |
 | Register | `register.html` (posts to Formspree; disabled until a form ID replaces `FORM_ID_PENDING`) |
+| Invitation (pre-launch home page) | `invitation.html` |
 | Not found | `404.html` |
 
 Shared: `styles.css`, `script.js`. No external fonts, scripts, or images: everything is inline, to satisfy the site's Content Security Policy.
@@ -24,11 +25,19 @@ Venue, meeting day/time, contact email, officers, fees, and the Formspree form I
 
 ## Deployment — GitHub Pages
 
-Repo: `https://github.com/amadriaga/sjfacc.github.io` (public). Served through Cloudflare (orange cloud); the HTTPS redirect and security headers are set at Cloudflare
+Repo: `https://github.com/amadriaga/sjfacc.github.io` (public). Served through Cloudflare (orange cloud); the HTTPS redirect and security headers are set at Cloudflare. GitHub's own "Enforce HTTPS" stays off behind Cloudflare; that's expected.
 
-1. Push to the `main` branch; GitHub Pages deploys automatically
-2. The custom domain is set by the `CNAME` file (`sjfacc.org`)
-3. GitHub's own "Enforce HTTPS" stays off behind Cloudflare; that's expected
+GitHub Pages serves the **`main`** branch. For the Inaugural Club Night launch, three branches are used:
+
+| Branch | Content | Updated by |
+|---|---|---|
+| `launch` (default branch) | The full site | `../prepare-sjfacc-launch-branches.sh` (from this repo's committed `main`) |
+| `prelaunch` | Invitation version: `invitation.html` as the home page, About Us and Schedule removed | Same script (`../make-sjfacc-prelaunch.py`) |
+| `main` (live) | Points at `launch` or `prelaunch` | **Only** the workflows below — never pushed by hand |
+
+Workflows (Actions tab, "Run workflow"): **Go live — show the full site** (type `LAUNCH`) and **Show the invitation page** (type `INVITATION`). Button page: https://sjfacc.o2bot.com/launch.html. Details: `../sjfacc-inaugural-club-night/inaugural-club-night-program.md` §17.
+
+Review copy: https://sjfacc.o2bot.com (`../publish-sjfacc-preview.sh`).
 
 ## Local Development
 

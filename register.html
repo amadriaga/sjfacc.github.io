@@ -61,7 +61,7 @@
               <select id="age" name="age_group" required>
                 <option value="">Select…</option><option value="under-12">Under 12</option><option value="12-17">12–17</option><option value="18-34">18–34</option><option value="35-54">35–54</option><option value="55-plus">55+</option>
               </select></div>
-            <div class="field field--full hidden" id="guardian-field"><label for="guardian">Parent / guardian name <span class="req">*</span> <span class="hint">— required for players under 18</span></label><input type="text" id="guardian" name="guardian_name"></div>
+            <div class="field field--full hidden" id="guardian-field"><label for="guardian">Parent / guardian name <span class="req">*</span> <span class="hint">— required for players under 18; a parent or guardian should complete this form</span></label><input type="text" id="guardian" name="guardian_name"></div>
             <div class="field"><label for="level">Experience <span class="req">*</span></label>
               <select id="level" name="experience" required>
                 <option value="">Select…</option><option>New to chess</option><option>Casual player</option><option>Club or tournament player</option>
@@ -77,7 +77,8 @@
               </div>
             </fieldset>
             <div class="field field--full"><label for="message">Anything else? <span class="hint">(optional)</span></label><textarea id="message" name="message"></textarea></div>
-            <div class="field field--full"><label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>I agree to be contacted by the South Jersey Filipino-American Chess Club about membership and club activities. <span class="req">*</span></span></label></div>
+            <div class="field field--full"><label class="consent"><input type="checkbox" name="photo_permission" value="yes"> <span><b>Photo permission</b> <span class="hint">(optional)</span> — the club may include me, or my child if registering a player under 18, in photos and videos from club events on sjfacc.org and the club’s social media. You can change this at any time.</span></label></div>
+            <div class="field field--full"><label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>I agree to be contacted by the South Jersey Filipino-American Chess Club about membership and club activities, as described in our <a href="/privacy.html">Privacy &amp; Disclaimer</a>. <span class="req">*</span></span></label></div>
           </div>
           <div class="form-actions">
             <button class="btn btn-primary" type="submit">Submit registration</button>
@@ -121,7 +122,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span data-year>2026</span> South Jersey Filipino-American Chess Club</span>
-        <span>Est. November 17, 2026</span>
+        <span><a href="/privacy.html">Privacy &amp; Disclaimer</a> · Est. November 17, 2026</span>
       </div>
     </div>
   </footer>

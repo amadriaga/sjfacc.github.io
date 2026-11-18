@@ -168,6 +168,7 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .check input { margin-top: 4px; accent-color: var(--ink); }
 .consent { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; font-size: .92rem; color: var(--muted); }
 .consent input { margin-top: 5px; accent-color: var(--ink); }
+.consent b { font-weight: 600; color: var(--ink); }
 .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
 .form-actions p { margin: 0; font-size: .85rem; color: var(--muted); }
 .notice { display: none; margin-top: 20px; padding: 16px 18px; border-radius: 8px; background: var(--ivory); border: 1px solid var(--line); border-left: 3px solid var(--gold); font-size: .95rem; }
@@ -189,6 +190,21 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .site-footer a { color: #c4cddb; text-decoration: none; }
 .site-footer a:hover { color: #fff; }
 .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 24px; font-size: .84rem; }
+
+/* Privacy & Disclaimer page */
+.draft-banner { max-width: 760px; margin: 0 0 40px; padding: 18px 22px; border-radius: var(--radius); background: #fff8e6; border: 1px solid #ecd9a6; border-left: 4px solid var(--gold); }
+.draft-banner strong { display: block; font-family: var(--serif); color: var(--ink); font-size: 1.1rem; margin-bottom: 4px; }
+.draft-banner p { margin: 0; color: var(--muted); font-size: .95rem; }
+.prose { max-width: 760px; }
+.prose h2 { font-size: 1.45rem; margin: 44px 0 12px; scroll-margin-top: 96px; }
+.prose h2 span { color: var(--gold); margin-right: 6px; }
+.prose ul { margin: 0 0 1em; padding-left: 1.2em; }
+.prose li { margin-bottom: 6px; }
+.prose li::marker { color: var(--gold); }
+.updated { font-size: .88rem; color: var(--muted); padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.board { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: #fff8e6; color: #8a6a1f; border: 1px solid #ecd9a6; vertical-align: 2px; white-space: nowrap; }
+.footer-bottom a { color: #c4cddb; }
+@media print { .site-header, .site-footer, .skip, .page-hero::before { display: none; } .page-hero { background: none; color: #000; padding: 0; } .page-hero h1 { color: #000; } .section { padding: 16px 0; } .board { border: 1px solid #000; } }
 
 /* 404 */
 .notfound { min-height: 60vh; display: grid; place-items: center; text-align: center; padding: 80px 0; }

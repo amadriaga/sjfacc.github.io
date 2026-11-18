@@ -6,11 +6,13 @@
 # See websites/sjfacc-inaugural-club-night/inaugural-club-night-program.md §17.4
 name: "Show the invitation page"
 
+run-name: "${{ github.repository == 'amadriaga/sjfacc.github.io' && 'LIVE sjfacc.org' || 'PRACTICE review copy' }} — show the invitation page"
+
 on:
   workflow_dispatch:
     inputs:
       confirm:
-        description: "Type INVITATION to confirm"
+        description: "LIVE sjfacc.org: type INVITATION SJFACC.ORG · review copy: type INVITATION"
         required: true
         type: string
 
@@ -27,12 +29,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check the confirmation word
-        if: ${{ inputs.confirm != 'INVITATION' }}
         env:
           TYPED: ${{ inputs.confirm }}
+          # The live site needs a longer word, so a practice press can't switch it.
+          EXPECTED: ${{ github.repository == 'amadriaga/sjfacc.github.io' && 'INVITATION SJFACC.ORG' || 'INVITATION' }}
         run: |
-          echo "::error::You typed '$TYPED'. Type INVITATION exactly. Nothing was changed."
-          exit 1
+          if [ "$TYPED" != "$EXPECTED" ]; then
+            echo "::error::You typed '$TYPED'. For this site type '$EXPECTED' exactly. Nothing was changed."
+            exit 1
+          fi
+          echo "Confirmed: $EXPECTED"
 
       - uses: actions/checkout@v5
         with:

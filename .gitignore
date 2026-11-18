@@ -38,3 +38,8 @@ wrangler.toml
 # Temporary files
 *.tmp
 *.temp
+
+# Uploaded originals / pending files: never publish (see ../sjfacc.org-website-plan.md §7b, §8 row 8b)
+sjfacc-color.webp
+sjfacc-no-color.webp
+sjfacc-disclaimer.md

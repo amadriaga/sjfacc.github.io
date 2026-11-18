@@ -57,7 +57,7 @@ p { margin: 0 0 1em; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 253, 248, .94); backdrop-filter: saturate(140%) blur(8px); border-bottom: 1px solid var(--line); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
-.brand-mark { width: 40px; height: 40px; flex: none; }
+.brand-mark { width: 40px; height: 40px; flex: none; border-radius: 50%; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; letter-spacing: .06em; }
 .brand-sub { font-size: .72rem; color: var(--muted); letter-spacing: .04em; }
@@ -92,11 +92,9 @@ p { margin: 0 0 1em; }
 .hero-meta strong { display: block; font-family: var(--serif); font-size: 1.15rem; color: #fff; font-weight: 600; }
 .hero-meta span { color: #93a0b4; }
 
-/* Decorative board */
-.board { position: relative; aspect-ratio: 1; width: 100%; max-width: 400px; margin-left: auto; border-radius: 6px; padding: 14px; background: #233552; box-shadow: 0 30px 60px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(255, 255, 255, .08); }
-.board-grid { width: 100%; height: 100%; border-radius: 2px; background: repeating-conic-gradient(#e9dcc0 0 25%, #a7865a 0 50%) 0 0 / 25% 25%; }
-.board-piece { position: absolute; width: 23%; left: 52%; top: 40%; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .35)); }
-.board-caption { position: absolute; bottom: -34px; right: 0; font-size: .8rem; color: #8492a8; letter-spacing: .08em; }
+/* Hero crest */
+.hero-crest { display: flex; justify-content: flex-end; }
+.hero-crest img { width: 100%; max-width: 420px; height: auto; filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .45)); }
 
 /* Page header (inner pages) */
 .page-hero { background: var(--ink); color: #c9d2df; padding: 72px 0 64px; position: relative; overflow: hidden; }
@@ -199,7 +197,8 @@ fieldset { border: 0; padding: 0; margin: 0; }
 /* Responsive */
 @media (max-width: 960px) {
   .hero-inner { grid-template-columns: 1fr; padding: 72px 0 80px; gap: 48px; }
-  .board { max-width: 320px; margin: 0 auto; }
+  .hero-crest { justify-content: center; }
+  .hero-crest img { max-width: 280px; }
   .split { grid-template-columns: 1fr; gap: 40px; }
   .grid-3 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }

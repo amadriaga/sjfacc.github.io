@@ -1,0 +1,59 @@
+# Go live — show the full site
+# Manual switch for the live website. GitHub Pages serves the `main` branch;
+# this moves `main` to the `launch` branch. Run it from the Actions tab
+# ("Run workflow"); only people with write access to this repo can.
+# See websites/sjfacc-inaugural-club-night/inaugural-club-night-program.md §17.4
+name: "Go live — show the full site"
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type LAUNCH to confirm"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sjfacc-live-switch
+  cancel-in-progress: false
+
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the confirmation word
+        if: ${{ inputs.confirm != 'LAUNCH' }}
+        run: |
+          echo "::error::You typed '${{ inputs.confirm }}'. Type LAUNCH exactly. Nothing was changed."
+          exit 1
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Point the live site (main) at the launch branch
+        run: |
+          git fetch origin launch
+          echo "main was:  $(git rev-parse --short origin/main 2>/dev/null || echo none)"
+          git push --force origin "origin/launch:refs/heads/main"
+          echo "main is now: $(git rev-parse --short origin/launch) (launch)"
+
+      - name: Ask GitHub Pages to rebuild
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --silent || echo "Rebuild request not accepted; GitHub usually rebuilds on the push anyway."
+
+      - name: Wait until the website shows the full site
+        run: |
+          DOMAIN=$(git show "origin/launch:CNAME" | tr -d '[:space:]')
+          for i in $(seq 1 40); do
+            T=$(curl -s "https://$DOMAIN/?check=${GITHUB_RUN_ID}-$i" | grep -o '<title>[^<]*' || true)
+            echo "check $i: ${T#<title>}"
+            case "$T" in *"South Jersey Filipino-American Chess Club | SJFACC"*) echo "Done: https://$DOMAIN now shows the full site."; exit 0;; esac
+            sleep 15
+          done
+          echo "::warning::The switch was made, but https://$DOMAIN had not updated after 10 minutes. Open it in a private window to check."

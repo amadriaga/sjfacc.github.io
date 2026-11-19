@@ -14,6 +14,7 @@ Plan: `../sjfacc.org-website-plan.md` · Domain setup: `../sjfacc.org-domain.md`
 | About Us | `about.html` |
 | Schedule | `schedule.html` |
 | Register | `register.html` (posts to Formspree; disabled until a form ID replaces `FORM_ID_PENDING`) |
+| Downloads (program, flyers) | `downloads.html` + `downloads/*.pdf` (refresh with `../sync-sjfacc-downloads.sh`) |
 | Invitation (pre-launch home page) | `invitation.html` |
 | Not found | `404.html` |
 

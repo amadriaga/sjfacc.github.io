@@ -205,6 +205,16 @@ fieldset { border: 0; padding: 0; margin: 0; }
 .event-link::before { content: "\2193  "; color: var(--gold); }
 .event { scroll-margin-top: 96px; }
 
+/* Downloads */
+.docs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.doc-card { display: flex; flex-direction: column; }
+.doc-card h3 { margin: 4px 0 6px; }
+.doc-card p { flex: 1; }
+.doc-icon { width: 46px; height: 56px; border-radius: 6px; background: var(--ivory); border: 1px solid var(--line); color: var(--ph-red); font: 700 .72rem/56px var(--sans); text-align: center; letter-spacing: .06em; margin-bottom: 14px; }
+.doc-meta { font-size: .82rem; color: var(--muted); margin-top: 12px !important; flex: 0 !important; }
+.doc-card .btn { margin-top: 16px; align-self: flex-start; }
+@media (max-width: 960px) { .docs { grid-template-columns: 1fr; } }
+
 /* Officers (About Us) */
 .officers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .officer { padding: 24px; text-align: center; }

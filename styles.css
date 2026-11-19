@@ -295,3 +295,9 @@ input[type=date] { font: inherit; font-size: .98rem; color: var(--text); backgro
 .checks--3 { grid-template-columns: repeat(3, 1fr); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 560px) { .checks--3 { grid-template-columns: 1fr; } }
+
+/* Downloads: recommended (black-and-white) card */
+.btn-outline { border-color: var(--ink); color: var(--ink); background: #fff; }
+.btn-outline:hover { background: var(--ivory); color: var(--ink); }
+.doc-card--rec { border: 2px solid var(--gold); }
+.badge--rec { align-self: flex-start; margin-bottom: 12px; background: var(--gold); color: var(--ink); border-color: var(--gold); }

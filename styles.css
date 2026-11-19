@@ -207,12 +207,13 @@ fieldset { border: 0; padding: 0; margin: 0; }
 
 /* Officers (About Us) */
 .officers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.officer { padding: 24px; }
-.officer h3 { font-size: 1.1rem; margin: 6px 0 6px; }
-.officer p { font-size: .92rem; }
+.officer { padding: 24px; text-align: center; }
+.officer-photo { width: 96px; height: 96px; margin: 0 auto 14px; border-radius: 50%; background: var(--ivory); border: 1px solid var(--line); color: #c9c2b2; display: grid; place-items: center; overflow: hidden; }
+.officer-photo svg { width: 64px; height: 64px; margin-top: 10px; }
+.officer h3 { font-size: 1.1rem; margin: 0 0 4px; }
+.officer-status { font-size: .74rem !important; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold) !important; }
 .officers-sub { margin: 36px 0 16px; font-size: 1.15rem; }
 @media (max-width: 960px) { .officers { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .officers { grid-template-columns: 1fr; } }
 
 /* Privacy & Disclaimer page */
 .draft-banner { max-width: 760px; margin: 0 0 40px; padding: 18px 22px; border-radius: var(--radius); background: #fff8e6; border: 1px solid #ecd9a6; border-left: 4px solid var(--gold); }

@@ -39,7 +39,7 @@ wrangler.toml
 *.tmp
 *.temp
 
-# Uploaded originals / pending files: never publish (see ../sjfacc.org-website-plan.md §7b, §8 row 8b)
+# Uploaded originals / pending files: never publish (see ../docs/sjfacc.org-website-plan.md §7b, §8 row 8b)
 sjfacc-color.webp
 sjfacc-color.svg
 sjfacc-no-color.webp
